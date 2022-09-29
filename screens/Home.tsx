@@ -6,6 +6,7 @@ import { StatusBar } from "expo-status-bar";
 import { Container } from "../components/shared";
 import { colors } from "../components/colors";
 import CardSection from "../components/cards/CardSection";
+import TransactionSection from "../components/Transactions/TransactionSection";
 
 //images
 import Logo1 from "./../assets/cards/mc.png";
@@ -41,11 +42,69 @@ const Home: FunctionComponent = () => {
       logo: Logo1,
     },
   ];
+  const transactionData = [
+    {
+      id: 1,
+      amount: "-86.00",
+      date: "14 sep 2021",
+      title: "Taxi",
+      subtitle: "Uber car",
+      art: {
+        background: colors.primary,
+        icon: "car",
+      },
+    },
+    {
+      id: 2,
+      amount: "-210.00",
+      date: "16 sep 2021",
+      title: "Shopping",
+      subtitle: "Walmart",
+      art: {
+        background: colors.tertiary,
+        icon: "cart-outline",
+      },
+    },
+    {
+      id: 3,
+      amount: "-240.00",
+      date: "17 sep 2021",
+      title: "Travel",
+      subtitle: "Ticket",
+      art: {
+        background: colors.secondary,
+        icon: "airplane-outline",
+      },
+    },
+    {
+      id: 4,
+      amount: "-18.00",
+      date: "18 sep 2021",
+      title: "Cafe",
+      subtitle: "Starbucks",
+      art: {
+        background: colors.accent,
+        icon: "cafe-outline",
+      },
+    },
+    {
+      id: 5,
+      amount: "-20.00",
+      date: "18 sep 2021",
+      title: "Fast food",
+      subtitle: "Macdonald",
+      art: {
+        background: colors.accent,
+        icon: "fast-food-outline",
+      },
+    },
+  ];
 
   return (
     <HomeContainer>
       <StatusBar style="dark" />
       <CardSection data={cardsDate} />
+      <TransactionSection data={transactionData} />
     </HomeContainer>
   );
 };
