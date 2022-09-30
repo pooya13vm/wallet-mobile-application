@@ -57,7 +57,7 @@ const RootStack: FunctionComponent = () => {
             headerTitle: "",
             headerLeft: (props) => (
               <Greeting
-                mainText="Hey jane!"
+                mainText="Hey john!"
                 subText="Welcome back"
                 {...props}
               />
