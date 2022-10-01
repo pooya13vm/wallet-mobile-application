@@ -1,4 +1,4 @@
-import { FunctionComponent, useRef } from "react";
+import React, { FunctionComponent, useRef } from "react";
 import styled from "styled-components/native";
 import BottomSheet from "reanimated-bottom-sheet";
 
@@ -6,6 +6,7 @@ import BottomSheet from "reanimated-bottom-sheet";
 import { colors } from "../colors";
 import RegularText from "../Texts/RegularText";
 import SmallText from "../Texts/SmallText";
+import SendMoneyItem from "./SendMoneyItem";
 
 //types
 import { SendMoneySectionProps } from "./types";
@@ -13,7 +14,7 @@ import { SendMoneySectionProps } from "./types";
 const SendMoneySectionBackground = styled.View`
   width: 100%;
   padding-top: 15px;
-  background-color: ${colors.white};
+  background-color: ${colors.gray};
 `;
 const SendMoneyRow = styled.View`
   flex-direction: row;
@@ -33,7 +34,7 @@ const TextButton = styled.TouchableOpacity``;
 const SendMoneySection: FunctionComponent<SendMoneySectionProps> = (props) => {
   const sheetRef = useRef<BottomSheet>(null);
 
-  const RenderContent = () => {
+  const renderContent = () => {
     return (
       <SendMoneySectionBackground>
         <SendMoneyRow style={{ marginBottom: 25 }}>
@@ -48,6 +49,18 @@ const SendMoneySection: FunctionComponent<SendMoneySectionProps> = (props) => {
             </SmallText>
           </TextButton>
         </SendMoneyRow>
+        <SendMoneyList
+          key={"_"}
+          data={props.data}
+          contentContainerStyle={{
+            alignItem: "flex-start",
+          }}
+          horizontal={false}
+          showVerticalScrollIndicator={false}
+          numColumns={3}
+          keyExtractor={({ id }: any) => "_" + id.toString()}
+          renderItem={({ item }: any) => <SendMoneyItem {...item} />}
+        />
       </SendMoneySectionBackground>
     );
   };
@@ -59,7 +72,7 @@ const SendMoneySection: FunctionComponent<SendMoneySectionProps> = (props) => {
       borderRadius={25}
       initialSnap={1}
       enabledContentGestureInteraction={false}
-      renderContent={RenderContent}
+      renderContent={renderContent}
     />
   );
 };
