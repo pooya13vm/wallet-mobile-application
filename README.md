@@ -25,7 +25,10 @@ To run this project, install it locally using npm:
 - $ npm install
 - $ expo start
 ***
-## Note : 
+## Images: 
 <p float="left">
-<img src="https://github.com/pooya13vm/wallet-mobile-application/githubImages/1.png?raw=true" width="150">
+<img src="https://github.com/pooya13vm/wallet-mobile-application/blob/main/githubImages/4.png?raw=true" width="150">
+<img src="https://github.com/pooya13vm/wallet-mobile-application/blob/main/githubImages/2.png?raw=true" width="150">
+<img src="https://github.com/pooya13vm/wallet-mobile-application/blob/main/githubImages/1.png?raw=true" width="150">
+<img src="https://github.com/pooya13vm/wallet-mobile-application/blob/main/githubImages/3.png?raw=true" width="150">
 
